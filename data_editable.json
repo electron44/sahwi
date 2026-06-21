@@ -1,0 +1,738 @@
+{
+  "categories": [
+    {
+      "id": "naqs",
+      "label": "J'ai oublié quelque chose",
+      "sous_titre": "un acte, une parole, une posture"
+    },
+    {
+      "id": "ziyada",
+      "label": "J'ai ajouté quelque chose",
+      "sous_titre": "une rak'a, une parole, un geste en trop"
+    },
+    {
+      "id": "shakk",
+      "label": "J'ai eu un doute",
+      "sous_titre": "je ne sais plus ce que j'ai fait"
+    }
+  ],
+  "verdicts": {
+    "sujud_qabli": {
+      "titre": "Sujud qabli.",
+      "sous": "Avant le salam.",
+      "couleur": "qabli"
+    },
+    "sujud_badi": {
+      "titre": "Sujud ba'di.",
+      "sous": "Après le salam.",
+      "couleur": "badi"
+    },
+    "faire_le_sujud": {
+      "titre": "Faites le sujud.",
+      "sous": "Maintenant.",
+      "couleur": "qabli"
+    },
+    "rien": {
+      "titre": "Rien à faire.",
+      "sous": "La prière reste valide.",
+      "couleur": "rien"
+    },
+    "reprendre": {
+      "titre": "Reprendre.",
+      "sous": "La prière entière.",
+      "couleur": "reprendre"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "forgot_sourate_apres_fatiha",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié la sourate après la Fâtiha",
+      "verdict": "sujud_qabli",
+      "corps": "Deux prosternations avant le salam. La prière reste valide.",
+      "pourquoi": "La sourate après la Fâtiha est une sunna mu'akkada. Son omission se répare par sujud qabli, deux prosternations avant le salam.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 264,
+        "extrait_ar": "ف(يسجد) حينئذٍ (سجدتان قبل السلام) أي (بعد تمام التشهدين)"
+      },
+      "hadith": "Ibn Mas'ûd, rapporté par al-Bukhârî et Muslim (muttafaq 'alayh)."
+    },
+    {
+      "id": "forgot_sura_remembered_after_rukoo",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié la sourate et je m'en suis rappelé après le rukû'",
+      "verdict": "sujud_qabli",
+      "corps": "Deux prosternations après le tashahhud final, avant le salam. Ne revenez pas en arrière.",
+      "pourquoi": "La sourate après la Fâtiha est une sunna mu'akkada. On ne revient pas en arrière vers une sunna quand on s'est déjà engagé dans un acte obligatoire (le rukû'). On poursuit la prière et on fait le sujud qabli.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 253,
+        "extrait_ar": "ومن تذكر السورة بعد انحنائه للركوع فلا يرجع إليها"
+      },
+      "divergence": "Certains savants du madhhab admettent le retour vers la sunna tant que le rukû' n'est pas confirmé par le redressement (i'tidâl). La position retenue par l'Akhdari demeure la plus suivie."
+    },
+    {
+      "id": "forgot_tashahhud_milieu",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié de m'asseoir pour le tashahhud du milieu",
+      "verdict": "sujud_qabli",
+      "corps": "Deux prosternations avant le salam. On ne redescend pas s'asseoir.",
+      "pourquoi": "L'assise du milieu et le tashahhud qui l'accompagne sont des sunan mu'akkada. Dès lors qu'on s'est relevé, leur omission se répare par sujud qabli. On ne revient pas s'asseoir.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 258,
+        "extrait_ar": "ومن قام عن الجلوس الأول فلا يرجع إليه"
+      }
+    },
+    {
+      "id": "forgot_tashahhud_final",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié le tashahhud final",
+      "verdict": "sujud_badi",
+      "corps": "On s'assied, on récite le tashahhud, on dit le salam, puis sujud ba'di suivi d'un second salam.",
+      "pourquoi": "Le tashahhud final est une sunna mu'akkada. S'il est omis et qu'on s'en rappelle avant un délai trop long, on s'assied et on le récite. Puisque le salam a déjà été prononcé (le tashahhud le précède directement), le sujud se fait après le salam (ba'di), suivi d'un second salam.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 263
+      }
+    },
+    {
+      "id": "recited_sirr_in_jahr",
+      "categorie": "naqs",
+      "phrase": "J'ai récité à voix basse dans une prière à voix haute",
+      "verdict": "sujud_qabli",
+      "corps": "Deux prosternations avant le salam. La prière reste valide.",
+      "pourquoi": "Le jahr (récitation à voix haute) est une sunna mu'akkada dans les prières concernées (Subh, Maghrib, 'Ishâ'). Y substituer la voix basse par oubli se répare par sujud qabli. Exception : le sirr et le jahr déclenchent le sujud même seuls, contrairement aux autres sunan qui exigent l'omission de deux pour déclencher le qabli.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 270,
+        "extrait_ar": "ولا يكون السجود القبلي إلا لترك سنتين فأكثر، وأما السنة الواحدة فلا سجود لها إلا السر والجهر"
+      }
+    },
+    {
+      "id": "missed_jahr_only_after_rukoo",
+      "categorie": "naqs",
+      "phrase": "Après le rukû', je réalise que j'ai récité à voix basse au lieu de haute",
+      "verdict": "sujud_qabli",
+      "corps": "Deux prosternations avant le salam.",
+      "pourquoi": "Après le rukû', il n'est plus possible de corriger. L'omission du jahr est constatée et se répare par sujud qabli.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 254
+      }
+    },
+    {
+      "id": "missed_one_takbir",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié un seul takbîr de transition",
+      "verdict": "rien",
+      "corps": "Pas de sujud. La prière reste valide. Attention : prosterner pour cela invaliderait la prière.",
+      "pourquoi": "Un takbîr unique relève de la fadila, non de la sunna mu'akkada. Aucun sujud n'est requis pour l'omission d'une fadila. Faire le sujud pour une fadila invalide la prière.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 270,
+        "extrait_ar": "والفضيلة لا سجود لها ومن سجد لها بطلت صلاته"
+      }
+    },
+    {
+      "id": "missed_two_takbir",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié deux takbîrs de transition",
+      "verdict": "sujud_qabli",
+      "corps": "Deux prosternations avant le salam. La prière reste valide.",
+      "pourquoi": "L'omission de deux takbîrs atteint le seuil de deux sunan mu'akkada, ce qui déclenche le sujud qabli.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 270
+      }
+    },
+    {
+      "id": "missed_three_takbir_with_tul",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié trois takbîrs ou plus et le temps a passé",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "La prière n'est pas valide. Elle est à reprendre entièrement.",
+      "pourquoi": "L'omission de trois takbîrs ou plus, accompagnée de l'écoulement d'une durée importante (tûl), invalide la prière.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 270
+      }
+    },
+    {
+      "id": "missed_niyya_or_takbir_ihram",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié la niyya ou la takbîrat al-ihrâm",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "Aucun rattrapage. La prière est à reprendre depuis le début.",
+      "pourquoi": "L'intention (an-niyya) et la takbîrat al-ihrâm sont des piliers critiques. Si l'un fait défaut, l'entrée en prière n'a même pas eu lieu. Aucune réparation n'est possible.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 269,
+        "extrait_ar": "فإنهما لا يتداركان بوجه لأنهما إذا اختلفا واختل أحدهما لم يحصل الدخول في الصلاة"
+      },
+      "hadith": "Hadith d'Abû Hurayra (muttafaq 'alayh) : le Prophète ﷺ dit au mal-priant : « Retourne et prie, car tu n'as pas prié. »"
+    },
+    {
+      "id": "salam_after_two_rakahs",
+      "categorie": "naqs",
+      "phrase": "J'ai salué au bout de deux rak'as en croyant avoir terminé",
+      "pourquoi": "Celui qui salue par oubli avant la fin doit compléter les rak'as manquantes s'il s'en aperçoit à temps. Au-delà, la prière est perdue.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 272,
+        "extrait_ar": "ومن سلم من ركعتين ساهيا سجد بعد الصلاة"
+      },
+      "hadith": "Hadith de Dhû al-Yadayn, rapporté par al-Bukhârî et Muslim.",
+      "branches": [
+        {
+          "id": "proche",
+          "condition": "Je m'en suis aperçu rapidement, je suis encore proche",
+          "verdict": "sujud_badi",
+          "corps": "Reprenez les rak'as manquantes, puis accomplissez le sujud ba'di après le salam."
+        },
+        {
+          "id": "loin",
+          "condition": "Beaucoup de temps a passé ou j'ai quitté la mosquée",
+          "verdict": "reprendre",
+          "corps": "La prière est invalidée. Elle est à reprendre entièrement."
+        }
+      ]
+    },
+    {
+      "id": "bowed_before_completing_sura",
+      "categorie": "naqs",
+      "phrase": "Je me suis incliné avant d'avoir fini la sourate",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "L'achèvement de la sourate n'est pas une obligation. Le Prophète ﷺ a lui-même interrompu sourate al-Mu'minûn à la mention de Mûsa et Hârûn en raison d'une quinte de toux.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 251
+      }
+    },
+    {
+      "id": "missed_sirr_before_rukoo_sura",
+      "categorie": "naqs",
+      "phrase": "Avant le rukû', je me rappelle avoir confondu sirr/jahr dans la sourate seulement",
+      "verdict": "rien",
+      "corps": "Reprenez la sourate dans le mode requis. Aucun sujud.",
+      "pourquoi": "Si l'inversion ne concerne que la sourate et qu'on s'en rend compte avant le rukû', on reprend la sourate correctement. Aucun sujud n'est exigé.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 253
+      }
+    },
+    {
+      "id": "missed_sirr_before_rukoo_fatiha",
+      "categorie": "naqs",
+      "phrase": "Avant le rukû', je me rappelle avoir confondu sirr/jahr dans la Fâtiha",
+      "verdict": "sujud_badi",
+      "corps": "Reprenez la Fâtiha dans le mode requis, puis sujud ba'di après le salam.",
+      "pourquoi": "La Fâtiha étant un fard (pilier), sa reprise entraîne un ajout. Le sujud postérieur est accompli pour cette répétition.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 253
+      }
+    },
+    {
+      "id": "missed_qabli_forgot_to_do_it",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié de faire le sujud qabli avant de saluer",
+      "pourquoi": "Le sujud qabli est rattaché à la prière. S'il est omis, on revient le faire tant qu'on est encore dans la situation de la prière. Au-delà, la règle dépend de l'importance de ce qui a été manqué.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 267,
+        "extrait_ar": "ومن نسي السجود القبلي حتى سلم سجد إن كان قريبا"
+      },
+      "branches": [
+        {
+          "id": "proche",
+          "condition": "Je suis encore proche, je n'ai pas quitté la mosquée",
+          "verdict": "faire_le_sujud",
+          "corps": "Effectuez les deux prosternations, puis le salam. La prière reste valide."
+        },
+        {
+          "id": "sorti_peu",
+          "condition": "Je suis sorti, j'ai oublié moins de trois sunan",
+          "verdict": "rien",
+          "corps": "La prière est valide. Le sujud qabli s'éteint avec le temps lorsque ce qui a été omis est léger."
+        },
+        {
+          "id": "sorti_beaucoup",
+          "condition": "Je suis sorti, j'ai oublié trois sunan ou plus",
+          "verdict": "reprendre",
+          "corps": "L'accumulation des sunan manquées rend la réparation insuffisante. La prière est à reprendre."
+        }
+      ]
+    },
+    {
+      "id": "missed_badi_for_a_long_time",
+      "categorie": "naqs",
+      "phrase": "J'ai oublié de faire le sujud ba'di, je m'en souviens longtemps après",
+      "verdict": "faire_le_sujud",
+      "corps": "Accomplissez le sujud ba'di maintenant, même longtemps après. La prière reste valide.",
+      "pourquoi": "Le sujud postérieur ne connaît pas de péremption. Le sharh rapporte : « même après un an » (al-Wâdiha), « même après un mois » (al-Mudawwana). Si la prière d'origine était obligatoire, le sujud est accompli à tout moment. Si c'était une nâfila, on évite les moments où la nâfila est déconseillée.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 268,
+        "extrait_ar": "ومن نسي السجود البعدي سجده ولو بعد عام"
+      }
+    },
+    {
+      "id": "added_rakah_subh",
+      "categorie": "ziyada",
+      "phrase": "J'ai prié trois rak'as au Subh au lieu de deux",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam, suivies d'un tashahhud puis d'un second salam. La prière demeure valide.",
+      "pourquoi": "Tout ajout d'un acte de même nature que la prière (rak'a, prosternation, rukû') se répare par deux prosternations après le salam.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 272,
+        "extrait_ar": "ومن زاد في الصلاة ركعة أو ركعتين سجد بعد السلام"
+      }
+    },
+    {
+      "id": "added_two_rakah_in_four",
+      "categorie": "ziyada",
+      "phrase": "J'ai prié six rak'as dans une prière de quatre",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam. La prière reste valide.",
+      "pourquoi": "L'ajout de rak'as en deçà du double de la prière se répare par sujud ba'di. La prière n'est invalidée que si l'ajout atteint l'équivalent d'une prière entière.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 272
+      }
+    },
+    {
+      "id": "doubled_prayer",
+      "categorie": "ziyada",
+      "phrase": "J'ai prié exactement le double (ex. 4 rak'as au Subh, 8 au Dhuhr)",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "La prière n'est pas valide. Elle est à reprendre.",
+      "pourquoi": "Lorsque l'ajout porte sur l'équivalent d'une prière entière, la prière est invalidée selon la position retenue par Ibn al-Hâjib.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 272,
+        "extrait_ar": "ومن زاد في الصلاة مثلها بطلت"
+      },
+      "divergence": "Un avis minoritaire admet la validité avec sujud."
+    },
+    {
+      "id": "added_extra_sajda",
+      "categorie": "ziyada",
+      "phrase": "J'ai fait une prosternation en trop",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam. La prière demeure valide.",
+      "pourquoi": "L'ajout d'une prosternation est une augmentation d'acte de même genre que la prière. Réparation par sujud ba'di, après le salam.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 272
+      }
+    },
+    {
+      "id": "added_rukoo",
+      "categorie": "ziyada",
+      "phrase": "J'ai fait deux rukû' dans une même rak'a",
+      "verdict": "sujud_badi",
+      "corps": "On conclut, on salue, puis deux prosternations après le salam.",
+      "pourquoi": "Même règle que tout ajout d'acte de prière : on conclut, on salue, puis sujud ba'di.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 273
+      }
+    },
+    {
+      "id": "spoke_a_little_by_mistake",
+      "categorie": "ziyada",
+      "phrase": "J'ai parlé brièvement par mégarde",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam. La prière reste valide.",
+      "pourquoi": "La parole brève par oubli est traitée comme un ajout. Elle se répare par sujud ba'di. La parole délibérée, elle, invalide la prière.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 271,
+        "extrait_ar": "ومن تكلم ساهيا سجد بعد السلام"
+      },
+      "hadith": "Ibn Mas'ûd, rapporté par al-Bukhârî (mu'allaq)."
+    },
+    {
+      "id": "spoke_a_lot_by_mistake",
+      "categorie": "ziyada",
+      "phrase": "J'ai parlé longuement, même sans le vouloir",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "La prière n'est pas valide. Elle est à reprendre.",
+      "pourquoi": "La parole abondante, même par oubli, constitue une cause d'invalidité indépendante. Le volume de la parole dépasse le seuil toléré.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 271
+      }
+    },
+    {
+      "id": "spoke_deliberately",
+      "categorie": "ziyada",
+      "phrase": "J'ai parlé volontairement (hors réparation de la prière)",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "La prière n'est pas valide. Elle est à reprendre.",
+      "pourquoi": "La parole délibérée, lorsqu'elle ne tend pas à réparer la prière, invalide celle-ci quel que soit son volume.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 271
+      },
+      "hadith": "Ibn Mas'ûd (al-Bukhârî, mu'allaq) : « Il ne convient pas de parler dans la prière. »"
+    },
+    {
+      "id": "laughed",
+      "categorie": "ziyada",
+      "phrase": "J'ai ri pendant la prière",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "La prière n'est pas valide. Elle est à reprendre entièrement.",
+      "pourquoi": "Le rire dans la prière l'invalide, qu'il soit délibéré ou par inadvertance. Seul le sourire est sans conséquence.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 255,
+        "extrait_ar": "ومن ضحك في صلاته بطلت صلاته"
+      }
+    },
+    {
+      "id": "smiled",
+      "categorie": "ziyada",
+      "phrase": "J'ai juste souri pendant la prière",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Le sourire (at-tabassum) ne porte aucune conséquence sur la validité de la prière, contrairement au rire.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 255
+      }
+    },
+    {
+      "id": "jahara_in_sirriyya",
+      "categorie": "ziyada",
+      "phrase": "J'ai récité à voix haute dans une prière à voix basse",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam.",
+      "pourquoi": "C'est un ajout (du jahr). L'ajout de la voix haute se répare par sujud ba'di, après le salam, même s'il ne s'agit que d'une sunna.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 270
+      }
+    },
+    {
+      "id": "missed_sirr_only_after_rukoo",
+      "categorie": "ziyada",
+      "phrase": "Après le rukû', je réalise que j'ai récité à voix haute au lieu de basse",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam.",
+      "pourquoi": "Après le rukû', la correction n'est plus possible. L'ajout du jahr dans une prière silencieuse est une ziyada, réparée par sujud ba'di.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 254
+      }
+    },
+    {
+      "id": "repeated_fatiha_by_mistake",
+      "categorie": "ziyada",
+      "phrase": "J'ai récité la Fâtiha deux fois par oubli dans une rak'a",
+      "verdict": "sujud_badi",
+      "corps": "Deux prosternations après le salam. La prière reste valide.",
+      "pourquoi": "La répétition d'une parole ne déclenche généralement pas le sujud. La Fâtiha étant un fard, sa répétition est traitée comme une ziyâda à réparer par sujud ba'di.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 252,
+        "extrait_ar": "ومن كرر الفاتحة ساهيا سجد بعد السلام"
+      }
+    },
+    {
+      "id": "repeated_fatiha_deliberately",
+      "categorie": "ziyada",
+      "phrase": "J'ai répété la Fâtiha volontairement",
+      "verdict": "reprendre",
+      "invalide": true,
+      "corps": "La prière n'est pas valide selon l'avis retenu. Elle est à reprendre.",
+      "pourquoi": "La position de l'Akhdari retient l'invalidation apparente : tout ajout volontaire à la prière l'invalide.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 252,
+        "extrait_ar": "وإن كان عامدا فالظاهر البطلان"
+      },
+      "divergence": "Al-Ajhûrî retient la non-invalidation. Cette position demeure minoritaire."
+    },
+    {
+      "id": "added_sura_in_third_or_fourth",
+      "categorie": "ziyada",
+      "phrase": "J'ai récité une sourate dans la 3e ou 4e rak'a",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Le Prophète ﷺ complétait parfois la Fâtiha par d'autres versets dans les dernières rak'as. L'ajout d'une sourate dans la troisième ou quatrième rak'a n'entraîne pas de sujud.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 277,
+        "extrait_ar": "ومن زاد السورة في الركعتين الأخيرتين فلا سجود عليه"
+      },
+      "hadith": "Abû Sa'îd, rapporté par Muslim."
+    },
+    {
+      "id": "two_or_more_suwar_one_rakah",
+      "categorie": "ziyada",
+      "phrase": "J'ai récité deux sourates ou plus dans une seule rak'a",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Le Prophète ﷺ jumelait parfois plusieurs sourates dans une même rak'a.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 250
+      },
+      "hadith": "Ibn Mas'ûd citant 20 sourates « jumelées » par le Prophète ﷺ."
+    },
+    {
+      "id": "switched_suwar_midway",
+      "categorie": "ziyada",
+      "phrase": "J'ai changé de sourate en cours de récitation",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Le changement de sourate en cours de récitation est autorisé.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 251
+      },
+      "hadith": "Hadith de Bilâl, rapporté par Abû Dâwûd."
+    },
+    {
+      "id": "pointed_with_hand_or_head",
+      "categorie": "ziyada",
+      "phrase": "J'ai fait un signe de la main ou de la tête",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Ce geste est toléré (mughtafar). Répondre au salam par un simple signe est admis. Cela ne déclenche aucune obligation.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 251
+      }
+    },
+    {
+      "id": "loud_qunut",
+      "categorie": "ziyada",
+      "phrase": "J'ai dit le qunût à voix haute",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Le qunût est préférablement accompli à voix basse. Le prononcer à voix haute n'entraîne pas de sujud. Le caractère délibéré reste déconseillé (makrûh).",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 277,
+        "extrait_ar": "ومن جهر في القنوت فلا سجود عليه لكنه يكره عمدا"
+      }
+    },
+    {
+      "id": "said_salah_on_prophet_in_recitation",
+      "categorie": "ziyada",
+      "phrase": "J'ai prononcé la salât sur le Prophète ﷺ en entendant son nom dans la récitation",
+      "verdict": "rien",
+      "corps": "Aucun sujud requis. La prière reste valide.",
+      "pourquoi": "Les mâlikites préfèrent l'écoute silencieuse derrière l'imam, conformément à la prescription d'écoute du Coran. Aucun sujud requis.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 278
+      }
+    },
+    {
+      "id": "doubt_rakah_count",
+      "categorie": "shakk",
+      "phrase": "Je doute du nombre de rak'as que j'ai prié",
+      "verdict": "sujud_badi",
+      "corps": "Retenez le nombre certain (le moindre), complétez, puis deux prosternations après le salam.",
+      "pourquoi": "En cas de doute, on bâtit sur la certitude : on retient le moins et l'on complète. Puis sujud ba'di après le salam. Le doute sur une omission équivaut à la certitude de cette omission.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 273,
+        "extrait_ar": "ومن شك في كمال الصلاة أتى بما شك في النقصان كتحققه، فمن شك في ركعة أو سجدة أتى بها وسجد بعد السلام"
+      },
+      "hadith": "Ibn Mas'ûd, rapporté par al-Bukhârî (401) et Muslim (572)."
+    },
+    {
+      "id": "doubt_three_or_four",
+      "categorie": "shakk",
+      "phrase": "Je ne sais plus si j'ai fait trois ou quatre rak'as au Dhuhr",
+      "verdict": "sujud_badi",
+      "corps": "Considérez qu'il y en a trois, accomplissez la quatrième, puis deux prosternations après le salam.",
+      "pourquoi": "Le doute entre trois et quatre se traite en bâtissant sur le moindre : on considère qu'on en est à trois, on accomplit la quatrième, puis sujud ba'di.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 273
+      }
+    },
+    {
+      "id": "doubt_sajda",
+      "categorie": "shakk",
+      "phrase": "Je doute d'avoir fait une prosternation",
+      "verdict": "sujud_badi",
+      "corps": "Refaites la prosternation par précaution, puis deux prosternations après le salam.",
+      "pourquoi": "En cas de doute sur un acte, on le refait pour s'assurer de son accomplissement. Puis sujud ba'di pour la potentielle augmentation.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 274,
+        "extrait_ar": "فمن شك في ركعة أو سجدة أتى بها وسجد بعد السلام"
+      }
+    },
+    {
+      "id": "doubt_after_salam",
+      "categorie": "shakk",
+      "phrase": "J'ai un doute après le salam, sans certitude d'erreur",
+      "verdict": "rien",
+      "corps": "Un doute léger survenu après le salam n'oblige à rien. La prière reste valide.",
+      "pourquoi": "Un doute survenu après le salam, sans souvenir précis d'une erreur, n'oblige à rien. Le doute léger est ignoré après la clôture de la prière.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 274
+      }
+    },
+    {
+      "id": "doubt_about_salam",
+      "categorie": "shakk",
+      "phrase": "Je ne sais plus si j'ai dit le salam ou non",
+      "pourquoi": "Le doute sur le salam est traité selon la proximité. Si l'on est encore à sa place, on salue. Si l'on s'est éloigné, on revient et on reprend le tashahhud puis le salam. Si le délai est long, la prière est invalidée.",
+      "source": {
+        "ouvrage": "Mukhtasar al-Akhdari",
+        "sharh": "Al-Misk al-Adhfari",
+        "page": 274,
+        "extrait_ar": "ومن شك في السلام سلم إن كان قريبا ولا سجود عليه، وإن طال بطلت صلاته"
+      },
+      "branches": [
+        {
+          "id": "proche",
+          "condition": "Je suis encore à ma place, face à la qibla",
+          "verdict": "rien",
+          "corps": "Prononcez le salam. Aucun sujud requis."
+        },
+        {
+          "id": "loin",
+          "condition": "Long temps écoulé ou je me suis éloigné",
+          "verdict": "reprendre",
+          "corps": "La prière est invalidée. Elle est à reprendre."
+        }
+      ]
+    }
+  ],
+  "sunan": [
+    {
+      "lettre": "س",
+      "nom_ar": "السر",
+      "nom_fr": "Récitation à voix basse",
+      "def": "Baisser la voix dans les prières de jour.",
+      "exemple": "Dans le Dhuhr et le 'Asr."
+    },
+    {
+      "lettre": "س",
+      "nom_ar": "السورة",
+      "nom_fr": "Sourate après la Fâtiha",
+      "def": "Réciter une sourate à la suite de la Fâtiha.",
+      "exemple": "Dans les deux premières rak'as."
+    },
+    {
+      "lettre": "ش",
+      "nom_ar": "التشهد الأول",
+      "nom_fr": "Premier tashahhud",
+      "def": "Le tashahhud récité lors de l'assise du milieu.",
+      "exemple": "Assise après la deuxième rak'a."
+    },
+    {
+      "lettre": "ش",
+      "nom_ar": "التشهد الأخير",
+      "nom_fr": "Dernier tashahhud",
+      "def": "Le tashahhud récité avant le salam final.",
+      "exemple": "Avant de saluer."
+    },
+    {
+      "lettre": "ج",
+      "nom_ar": "الجهر",
+      "nom_fr": "Récitation à voix haute",
+      "def": "Élever la voix dans les prières de nuit.",
+      "exemple": "Maghrib, 'Ishâ', Subh."
+    },
+    {
+      "lettre": "ج",
+      "nom_ar": "الجلوس للتشهد",
+      "nom_fr": "Assise pour le tashahhud",
+      "def": "S'asseoir pour réciter chacun des deux tashahhud.",
+      "exemple": "Pour les deux tashahhud."
+    },
+    {
+      "lettre": "ت",
+      "nom_ar": "التكبير",
+      "nom_fr": "Takbîrs de transition",
+      "def": "Dire « Allâhu akbar » à chaque changement de posture.",
+      "exemple": "Sauf le takbîr d'entrée, qui est un rukn."
+    },
+    {
+      "lettre": "ت",
+      "nom_ar": "التسميع",
+      "nom_fr": "Sami'allâhu liman hamidah",
+      "def": "Le tasmî' prononcé en se relevant du rukû'.",
+      "exemple": "Au relèvement du rukû'."
+    }
+  ],
+  "matn": {
+    "ar": [
+      "وَإِنَّمَا يَسْجُدُ سَجْدَتَيْنِ قَبْلَ السَّلَامِ",
+      "لِنَقْصِ سُنَّةٍ مُؤَكَّدَةٍ أَوْ نَقْصِ سُنَنٍ خَفِيفَةٍ.",
+      "وَيَسْجُدُ سَجْدَتَيْنِ بَعْدَ السَّلَامِ",
+      "لِزِيَادَةٍ مِنْ جِنْسِ الصَّلَاةِ.",
+      "وَإِنِ اجْتَمَعَ نَقْصٌ وَزِيَادَةٌ سَجَدَ قَبْلَ السَّلَامِ."
+    ],
+    "fr": [
+      "On ne fait deux prosternations avant le salam que",
+      "pour l'omission d'une sunna mu'akkada, ou de plusieurs sunan légères.",
+      "On fait deux prosternations après le salam",
+      "pour un ajout d'acte du genre de la prière.",
+      "Si omission et ajout se combinent, on prosterne avant le salam."
+    ],
+    "page": 262,
+    "total": 285
+  }
+}

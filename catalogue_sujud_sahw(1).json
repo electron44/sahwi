@@ -1,0 +1,510 @@
+{
+  "meta": {
+    "version": "0.1-draft",
+    "extracted_by": "Claude, à partir de l'OCR du PDF fourni",
+    "needs_scholar_validation": true,
+    "language_madhhab": "Maliki",
+    "source": {
+      "matn": "Mukhtasar al-Akhdari",
+      "sharh": "Al-Misk al-Adhfari fi sharh wa adillat Mukhtasar al-Akhdhari",
+      "chapter": "Bab fi-s-sahw (باب في السهو)",
+      "pages_book": "262-285",
+      "pages_pdf": "1-24"
+    },
+    "notes_to_developer": [
+      "Chaque entrée porte une référence de page pour vérification par un savant.",
+      "Les divergences internes au madhhab sont conservées dans 'divergences' — ton app devra adopter la position retenue (mashhûr par défaut).",
+      "Les champs 'user_phrases_fr' sont des formulations en langage ordinaire pour le diagnostic. À enrichir/réviser avec un linguiste/pédagogue."
+    ]
+  },
+
+  "framework": {
+    "definition_ar": "سجود السهو: عبارة عن سجدتين يسجدهما المصلي لجبر الخلل الحاصل في صلاته من أجل السهو",
+    "definition_fr": "Le sujud al-sahw consiste en deux prosternations que le prieur effectue pour réparer le défaut survenu dans sa prière du fait de l'oubli.",
+    "general_ruling_ar": "وسجود السهو في الصلاة سنة",
+    "general_ruling_fr": "Le sujud al-sahw dans la prière est une sunna (selon le mashhûr).",
+    "causes": [
+      { "id": "ziyada", "ar": "الزيادة", "fr": "ajout d'un acte" },
+      { "id": "naqs",   "ar": "النقص",   "fr": "omission d'un acte" },
+      { "id": "shakk",  "ar": "الشك",    "fr": "doute sur ce qui a été accompli" }
+    ],
+    "evidence": [
+      {
+        "text_ar": "من زاد في صلاته أو نقص فليسجد سجدتين",
+        "narrator": "Ibn Mas'ûd",
+        "source": "Bukhârî 1174 (par le sens) ; Muslim 572 (formule)",
+        "strength": "muttafaq 'alayh"
+      },
+      {
+        "text_ar": "لكل سهو سجدتان",
+        "source": "Abû Dâwûd 1038",
+        "strength": "discuté ; voir note de l'éditeur p.263"
+      }
+    ],
+    "page_ref_pdf": "1-2"
+  },
+
+  "act_categories": [
+    {
+      "id": "rukn",
+      "name_ar": "ركن",
+      "name_fr": "Pilier",
+      "on_omission": "rattraper_le_pilier_ou_reprendre",
+      "on_omission_explain_fr": "Ne se répare PAS par le sujud. Doit être accompli réellement. Si impossible : reprendre la rak'a ou la prière.",
+      "evidence_text_ar": "فالركن لا ينجبر بالسجود وإنما ينجبر بالإتيان به",
+      "page_ref_pdf": 2
+    },
+    {
+      "id": "rukn_critique",
+      "name_ar": "النية وتكبيرة الإحرام",
+      "name_fr": "Niyya et takbîrat al-ihrâm",
+      "on_omission": "reprendre_entierement",
+      "on_omission_explain_fr": "Aucun rattrapage possible. Si l'une des deux fait défaut, on n'est pas même entré dans la prière : on reprend du début.",
+      "evidence_text_ar": "فإنهما لا يتداركان بوجه لأنهما إذا اختلفا واختل أحدهما لم يحصل الدخول في الصلاة",
+      "page_ref_pdf": 8
+    },
+    {
+      "id": "sunna_muakkada",
+      "name_ar": "سنة مؤكدة",
+      "name_fr": "Sunna mu'akkada",
+      "on_omission": "sujud_qabli",
+      "on_omission_explain_fr": "Réparée par deux prosternations AVANT le salam (sujud qabli).",
+      "threshold_rule": "Normalement, le qabli n'est déclenché qu'à partir de DEUX sunan omises, sauf exception du sirr et du jahr (voir 'special_rules.sirr_jahr').",
+      "evidence_text_ar": "ولا يكون السجود القبلي إلا لترك سنتين فأكثر، وأما السنة الواحدة فلا سجود لها إلا السر والجهر",
+      "page_ref_pdf": 9
+    },
+    {
+      "id": "fadila",
+      "name_ar": "فضيلة",
+      "name_fr": "Vertu (fadila), acte recommandé non mu'akkada",
+      "on_omission": "rien",
+      "on_omission_explain_fr": "AUCUN sujud requis. ⚠️ ATTENTION : faire un sujud pour une fadila INVALIDE la prière (« من سجد لها بطلت صلاته »).",
+      "evidence_text_ar": "والفضيلة لا سجود لها ومن سجد لها بطلت صلاته",
+      "page_ref_pdf": 2,
+      "examples": ["al-qunût", "une seule takbîr de transition"]
+    }
+  ],
+
+  "sunan_muakkada": {
+    "mnemonic_ar": "سينان شينان كذا جيمان — تاءان عدد السنن الثمان",
+    "mnemonic_explain_fr": "Vers mnémotechnique de l'Akhdari : deux sîn, deux shîn, deux jîm, deux tâ, total 8 sunan mu'akkada.",
+    "items": [
+      {
+        "id": "sirr",
+        "letter": "س",
+        "ar": "السر",
+        "fr": "Récitation à voix basse (dans les prières silencieuses)",
+        "user_phrases_fr": ["J'ai oublié de baisser la voix dans une prière silencieuse"]
+      },
+      {
+        "id": "sura",
+        "letter": "س",
+        "ar": "السورة",
+        "fr": "Récitation d'une sourate après la Fâtiha",
+        "user_phrases_fr": ["J'ai oublié la sourate après la Fâtiha"]
+      },
+      {
+        "id": "tashahhud_awwal",
+        "letter": "ش",
+        "ar": "التشهد الأول",
+        "fr": "Premier tashahhud (au milieu de la prière de 3 ou 4 rak'as)",
+        "user_phrases_fr": ["J'ai oublié de m'asseoir et de réciter le tashahhud du milieu"]
+      },
+      {
+        "id": "tashahhud_akhir",
+        "letter": "ش",
+        "ar": "التشهد الأخير",
+        "fr": "Dernier tashahhud (avant le salam)",
+        "user_phrases_fr": ["J'ai oublié le tashahhud final"]
+      },
+      {
+        "id": "jahr",
+        "letter": "ج",
+        "ar": "الجهر",
+        "fr": "Récitation à voix audible (dans les prières où elle l'est)",
+        "user_phrases_fr": ["J'ai récité à voix basse dans une prière à voix haute"]
+      },
+      {
+        "id": "julus_li_tashahhud",
+        "letter": "ج",
+        "ar": "الجلوس للتشهد",
+        "fr": "Assise pour le tashahhud",
+        "user_phrases_fr": ["Je me suis levé sans m'asseoir pour le tashahhud"]
+      },
+      {
+        "id": "takbir",
+        "letter": "ت",
+        "ar": "التكبير",
+        "fr": "Takbîrs de transition entre les postures",
+        "user_phrases_fr": ["J'ai oublié de dire 'Allâhu akbar' en changeant de posture"],
+        "note_fr": "L'omission d'UN seul takbîr est une fadila (pas de sujud). DEUX déclenchent le sujud. TROIS + tûl invalident la prière."
+      },
+      {
+        "id": "tasmi",
+        "letter": "ت",
+        "ar": "التسميع",
+        "fr": "« Sami'allâhu liman hamidah » en se relevant du rukû'",
+        "user_phrases_fr": ["J'ai oublié 'sami'allâhu liman hamidah' en me relevant"]
+      }
+    ]
+  },
+
+  "decision_rules": {
+    "rule_qabli_for_omission_of_sunna": {
+      "fr": "Omission d'une sunna mu'akkada → SUJUD QABLI (avant le salam), à effectuer après les deux tashahhuds.",
+      "ar_excerpt": "ف(يسجد) حينئذٍ (سجدتان قبل السلام) أي (بعد تمام التشهدين)",
+      "page_ref_pdf": 3
+    },
+    "rule_badi_for_addition": {
+      "fr": "Ajout d'un acte (geste ou parole) de même nature que la prière → SUJUD BA'DI (après le salam), suivi du tashahhud puis d'un second salam.",
+      "ar_excerpt": "للزيادة سجدتان بعد السلام ثم يتشهد بعدهما ويسلم",
+      "page_ref_pdf": 4
+    },
+    "rule_qabli_wins_when_both": {
+      "fr": "Si la prière contient à la fois omission et ajout, le QABLI prévaut : on prosterne avant le salam.",
+      "rationale_fr": "Quand le salb (négatif) et le mûjib (positif) se rencontrent, on privilégie l'effet du négatif, car le sujud de l'ajout est shukr (gratitude) et il ne convient pas de remercier pour une prière incomplète.",
+      "ar_excerpt": "إذا اجتمع نقص مع زيادة سجد لهما قبل السلام",
+      "page_ref_pdf": 5
+    },
+    "rule_qabli_threshold": {
+      "fr": "Le QABLI n'est déclenché qu'à partir de 2 sunan omises, SAUF pour le sirr et le jahr — pour ceux-là, une seule suffit.",
+      "ar_excerpt": "ولا يكون السجود القبلي إلا لترك سنتين فأكثر، وأما السنة الواحدة فلا سجود لها إلا السر والجهر",
+      "page_ref_pdf": 9
+    },
+    "rule_forgot_qabli": {
+      "fr": "Oubli du qabli jusqu'après le salam : si on est encore proche (n'a pas quitté la mosquée selon Ashhab, à défaut selon l'usage local 'urf), on fait le sujud (devient ba'di de fait). Si on est loin / sorti de la mosquée : le sujud est perdu. Verdict alors selon le nombre de sunan omises.",
+      "if_lost_three_or_more_sunan": "Prière INVALIDE → à reprendre.",
+      "if_lost_less_than_three": "Prière VALIDE → rien à faire de plus.",
+      "ar_excerpt": "وتبطل الصلاة معه إن كان عن ثلاث سنن وأكثر وإلا فلا تبطل صلاته",
+      "page_ref_pdf": 6
+    },
+    "rule_forgot_badi": {
+      "fr": "Oubli du sujud ba'di : à effectuer dès qu'on s'en souvient, même très longtemps après (« même après un an » selon al-Wâdiha, « même après un mois » selon la Mudawwana).",
+      "nuance_fr": "Si la prière d'origine était une farîda → on fait le sujud à tout moment. Si c'était une nâfila → on évite les moments où la nâfila est déconseillée.",
+      "ar_excerpt": "ومن نسي السجود البعدي سجده ولو بعد عام",
+      "page_ref_pdf": 7
+    },
+    "rule_doubt_general": {
+      "fr": "Doute sur le compte (ai-je prié 3 ou 4 rak'as ?) → on bâtit sur la certitude (le moindre), on complète, puis SUJUD BA'DI.",
+      "principle_ar": "الشك في النقصان كتحققه",
+      "principle_fr": "Le doute sur une omission équivaut à la certitude de cette omission.",
+      "ar_excerpt": "ومن شك في كمال الصلاة أتى بما شك في النقصان كتحققه. فمن شك في ركعة أو سجدة أتى بها وسجد بعد السلام",
+      "evidence": "Hadith Ibn Mas'ûd : « Quand l'un de vous doute, qu'il cherche le juste, complète, salue, puis prosterne deux fois » (Bukhârî 401)",
+      "page_ref_pdf": "12-13"
+    },
+    "rule_mawsus": {
+      "fr": "PROFIL SPÉCIAL — le mawsûs (celui dont les doutes sont chroniques et envahissants) ne suit PAS la règle du doute ordinaire. Il bâtit sur sa PREMIÈRE impression et ignore le doute, sinon il s'épuise (haraj wa mashaqqa). Il fait néanmoins un SUJUD BA'DI selon la Risâla.",
+      "ar_excerpt": "والموسوس يترك الوسوسة ولا يأتي بما شك فيه سواء في زيادة أو نقصان",
+      "treatment_fr": "Remèdes spirituels mentionnés : dhikr d'Allâh, dire 'âmantu billâh wa rusulih', cracher à sa gauche, réciter sûrat al-Ikhlâs, cesser d'y penser.",
+      "page_ref_pdf": "14-15",
+      "design_note": "Activer ce profil via un réglage utilisateur — il devrait pouvoir basculer entre 'doute normal' et 'mawsûs' selon son cas."
+    },
+    "rule_deliberate_omission": {
+      "fr": "L'omission DÉLIBÉRÉE d'une sunna : divergence. Ajhûrî → prière invalidée par le seul abandon. Sunhûrî → invalidée seulement après une longue durée (tûl). 'Adawî incline vers Sunhûrî.",
+      "page_ref_pdf": 7
+    }
+  },
+
+  "scenarios": [
+    {
+      "id": "added_rakah_subh",
+      "user_phrase_fr": "J'ai prié 3 rak'as au Subh au lieu de 2",
+      "type": "ziyada",
+      "verdict": "sujud_badi",
+      "prayer_valid": true,
+      "page_ref_pdf": "11-12"
+    },
+    {
+      "id": "added_two_rakah_in_four",
+      "user_phrase_fr": "J'ai prié 6 rak'as dans une prière de 4",
+      "type": "ziyada",
+      "verdict": "sujud_badi",
+      "prayer_valid": true,
+      "page_ref_pdf": "11-12"
+    },
+    {
+      "id": "doubled_prayer",
+      "user_phrase_fr": "J'ai prié exactement le double (ex: 4 rak'as au Subh, 8 au Dhuhr)",
+      "type": "ziyada_majeure",
+      "verdict": "reprendre",
+      "prayer_valid": false,
+      "page_ref_pdf": 12,
+      "divergence": "Mashhûr : invalide. Vue minoritaire : valable avec sujud."
+    },
+    {
+      "id": "salam_after_two_rakahs",
+      "user_phrase_fr": "J'ai salué au bout de 2 rak'as en croyant avoir terminé",
+      "type": "naqs",
+      "branches": [
+        {
+          "condition_fr": "Je m'en suis aperçu rapidement (encore proche)",
+          "verdict": "completer_puis_sujud_badi",
+          "explain_fr": "Reprendre, accomplir les rak'as manquantes, puis sujud ba'di."
+        },
+        {
+          "condition_fr": "Beaucoup de temps a passé / j'ai quitté la mosquée",
+          "verdict": "reprendre",
+          "prayer_valid": false
+        }
+      ],
+      "evidence_fr": "Hadith de Dhû-l-Yadayn (Bukhârî/Muslim).",
+      "page_ref_pdf": 11
+    },
+    {
+      "id": "doubt_rakah_count",
+      "user_phrase_fr": "Je ne sais plus si j'ai prié 3 ou 4 rak'as",
+      "type": "shakk",
+      "verdict": "completer_au_moindre_puis_sujud_badi",
+      "explain_fr": "Retenir le moindre nombre (3), prier la 4e, puis sujud ba'di.",
+      "if_mawsus": "Voir 'rule_mawsus' — ignorer le doute, bâtir sur la première impression.",
+      "page_ref_pdf": 12
+    },
+    {
+      "id": "doubt_about_salam",
+      "user_phrase_fr": "Je ne sais plus si j'ai dit le salam ou non",
+      "type": "shakk",
+      "branches": [
+        {
+          "condition_fr": "Proche (peu de temps écoulé)",
+          "verdict": "saluer",
+          "explain_fr": "Revenir à la position assise tournée vers la qibla, faire le salam. Si on s'est éloigné, refaire takbîrat al-ihrâm et tashahhud avant le salam."
+        },
+        {
+          "condition_fr": "Long temps écoulé",
+          "verdict": "reprendre",
+          "prayer_valid": false
+        }
+      ],
+      "page_ref_pdf": 13
+    },
+    {
+      "id": "spoke_a_little_by_mistake",
+      "user_phrase_fr": "J'ai parlé brièvement par mégarde",
+      "type": "ziyada_qawl",
+      "verdict": "sujud_badi",
+      "prayer_valid": true,
+      "page_ref_pdf": 10
+    },
+    {
+      "id": "spoke_a_lot_by_mistake",
+      "user_phrase_fr": "J'ai parlé longuement, même sans le vouloir",
+      "type": "ziyada_qawl_kathir",
+      "verdict": "reprendre",
+      "prayer_valid": false,
+      "page_ref_pdf": 10
+    },
+    {
+      "id": "spoke_deliberately",
+      "user_phrase_fr": "J'ai parlé volontairement (hors réparation de la prière)",
+      "type": "ziyada_qawl_amd",
+      "verdict": "reprendre",
+      "prayer_valid": false,
+      "page_ref_pdf": 10,
+      "evidence_fr": "Hadith d'Ibn Mas'ûd : 'Il ne convient pas de parler dans la prière' (Bukhârî, mu'allaq)."
+    },
+    {
+      "id": "forgot_sura_remembered_after_rukoo",
+      "user_phrase_fr": "Je me suis rappelé que j'avais oublié la sourate, mais j'étais déjà en rukû'",
+      "type": "naqs_sunna",
+      "verdict": "sujud_qabli",
+      "explain_fr": "Ne pas revenir en arrière. Continuer la prière et faire sujud qabli (omission d'une sunna mu'akkada : la sourate).",
+      "page_ref_pdf": 22
+    },
+    {
+      "id": "asarra_in_jahriyya",
+      "user_phrase_fr": "J'ai récité à voix basse dans une prière à voix haute",
+      "type": "naqs_sunna_unique_exception",
+      "verdict": "sujud_qabli",
+      "explain_fr": "Exception : une seule sunna (le jahr) déclenche le sujud, car sirr et jahr sont à part.",
+      "page_ref_pdf": "9-10"
+    },
+    {
+      "id": "jahara_in_sirriyya",
+      "user_phrase_fr": "J'ai récité à voix haute dans une prière à voix basse",
+      "type": "ziyada_jahr",
+      "verdict": "sujud_badi",
+      "explain_fr": "C'est un ajout (du jahr), donc le sujud va APRÈS le salam, même s'il ne s'agit que d'une sunna.",
+      "page_ref_pdf": "9-10"
+    },
+    {
+      "id": "missed_sirr_jahr_before_rukoo_in_sura",
+      "user_phrase_fr": "Avant le rukû', je me rappelle avoir confondu sirr/jahr, mais seulement dans la sourate",
+      "verdict": "repeter_sourate_pas_de_sujud",
+      "page_ref_pdf": "22-23"
+    },
+    {
+      "id": "missed_sirr_jahr_before_rukoo_in_fatiha",
+      "user_phrase_fr": "Avant le rukû', je me rappelle avoir confondu sirr/jahr dans la Fâtiha",
+      "verdict": "repeter_fatiha_puis_sujud_badi",
+      "page_ref_pdf": "22-23"
+    },
+    {
+      "id": "missed_jahr_only_after_rukoo",
+      "user_phrase_fr": "Je m'en suis rendu compte seulement après le rukû' : j'ai récité à voix basse au lieu de haute",
+      "verdict": "sujud_qabli",
+      "page_ref_pdf": 23
+    },
+    {
+      "id": "missed_sirr_only_after_rukoo",
+      "user_phrase_fr": "Je m'en suis rendu compte seulement après le rukû' : j'ai récité à voix haute au lieu de basse",
+      "verdict": "sujud_badi",
+      "page_ref_pdf": 23
+    },
+    {
+      "id": "repeated_fatiha_by_mistake",
+      "user_phrase_fr": "J'ai récité la Fâtiha deux fois par oubli dans une rak'a",
+      "type": "ziyada_fard",
+      "verdict": "sujud_badi",
+      "prayer_valid": true,
+      "rationale_fr": "Habituellement, la répétition d'une parole ne déclenche pas le sujud, MAIS la Fâtiha étant un fard, sa répétition est traitée comme une ziyâda à réparer.",
+      "page_ref_pdf": 21
+    },
+    {
+      "id": "repeated_fatiha_deliberately",
+      "user_phrase_fr": "J'ai répété la Fâtiha volontairement",
+      "verdict": "reprendre_apparent",
+      "prayer_valid": false,
+      "note_fr": "Position de l'Akhdari : 'fa-z-zâhir al-butlân'. Position contraire chez Ajhûrî : non-invalidation.",
+      "page_ref_pdf": 21
+    },
+    {
+      "id": "added_sura_in_third_or_fourth",
+      "user_phrase_fr": "J'ai récité une sourate dans la 3e ou 4e rak'a (Dhuhr/'Asr/'Ishâ')",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "evidence_fr": "Hadith d'Abû Sa'îd (Muslim) : occasionnellement le Prophète ﷺ ajoutait à la Fâtiha.",
+      "page_ref_pdf": "16-17"
+    },
+    {
+      "id": "two_or_more_suwar_one_rakah",
+      "user_phrase_fr": "J'ai récité deux sourates ou plus dans une seule rak'a",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "evidence_fr": "Hadith d'Ibn Mas'ûd citant 20 sourates « jumelées » par le Prophète ﷺ.",
+      "page_ref_pdf": "18-19"
+    },
+    {
+      "id": "switched_suwar_midway",
+      "user_phrase_fr": "J'ai changé de sourate en cours de récitation",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "evidence_fr": "Hadith de Bilâl (Abû Dâwûd).",
+      "page_ref_pdf": 20
+    },
+    {
+      "id": "bowed_before_completing_sura",
+      "user_phrase_fr": "Je me suis incliné avant d'avoir fini la sourate",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "evidence_fr": "Le Prophète ﷺ a coupé surat al-Mu'minûn à la mention de Mûsa et Hârûn par une quinte de toux.",
+      "page_ref_pdf": 20
+    },
+    {
+      "id": "pointed_with_hand_or_head",
+      "user_phrase_fr": "J'ai fait un signe de la main ou de la tête",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "note_fr": "Toléré (mughtafar). Évitable mais sans conséquence.",
+      "page_ref_pdf": 21
+    },
+    {
+      "id": "loud_qunut",
+      "user_phrase_fr": "J'ai dit le qunût à voix haute",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "note_fr": "Délibérément, c'est makrûh (déconseillé).",
+      "page_ref_pdf": 16
+    },
+    {
+      "id": "said_salah_on_prophet_in_recitation",
+      "user_phrase_fr": "J'ai prononcé la salât/salâm sur le Prophète ﷺ en entendant son nom pendant la récitation",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "note_fr": "Position malikite : préférable de se taire derrière l'imam, mais pas de sujud.",
+      "page_ref_pdf": 17
+    },
+    {
+      "id": "laughed",
+      "user_phrase_fr": "J'ai ri pendant la prière",
+      "verdict": "reprendre",
+      "prayer_valid": false,
+      "note_fr": "Vaut volontairement ou par inadvertance. Le sourire (tabassum) ne fait rien.",
+      "page_ref_pdf": 24
+    },
+    {
+      "id": "smiled",
+      "user_phrase_fr": "J'ai juste souri pendant la prière",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "page_ref_pdf": 24
+    },
+    {
+      "id": "missed_one_takbir",
+      "user_phrase_fr": "J'ai oublié un seul takbîr de transition",
+      "verdict": "rien",
+      "prayer_valid": true,
+      "rationale_fr": "Un takbîr unique est une fadila — aucun sujud. Attention : faire le sujud pour ça invaliderait la prière.",
+      "page_ref_pdf": 9
+    },
+    {
+      "id": "missed_two_takbir",
+      "user_phrase_fr": "J'ai oublié deux takbîrs",
+      "verdict": "sujud_qabli",
+      "page_ref_pdf": 9
+    },
+    {
+      "id": "missed_three_takbir_with_tul",
+      "user_phrase_fr": "J'ai oublié trois takbîrs ou plus et le temps a passé",
+      "verdict": "reprendre",
+      "prayer_valid": false,
+      "page_ref_pdf": 9
+    },
+    {
+      "id": "missed_niyya_or_takbir_ihram",
+      "user_phrase_fr": "J'ai oublié la niyya ou la takbîrat al-ihrâm",
+      "verdict": "reprendre_completement",
+      "prayer_valid": false,
+      "note_fr": "Aucun rattrapage. On n'est même pas entré dans la prière.",
+      "page_ref_pdf": 8
+    },
+    {
+      "id": "missed_qabli_forgot_to_do_it",
+      "user_phrase_fr": "J'ai oublié de faire le sujud qabli avant de saluer",
+      "type": "cascade",
+      "branches": [
+        {
+          "condition_fr": "Je suis encore proche (je n'ai pas quitté la mosquée)",
+          "verdict": "faire_le_sujud_maintenant",
+          "explain_fr": "Le sujud se fait maintenant (il devient un sujud après-salam de fait)."
+        },
+        {
+          "condition_fr": "Je me suis éloigné / sorti de la mosquée — moins de 3 sunan omises",
+          "verdict": "rien_priere_valide",
+          "prayer_valid": true
+        },
+        {
+          "condition_fr": "Je me suis éloigné / sorti de la mosquée — 3 sunan omises ou plus",
+          "verdict": "reprendre",
+          "prayer_valid": false
+        }
+      ],
+      "page_ref_pdf": 6
+    },
+    {
+      "id": "missed_badi_for_a_long_time",
+      "user_phrase_fr": "J'ai oublié de faire le sujud ba'di, je m'en souviens longtemps après",
+      "verdict": "faire_le_sujud_maintenant",
+      "prayer_valid": true,
+      "note_fr": "Aucune péremption : même après un an. Pour une prière obligatoire, à tout moment. Pour une nâfila, éviter les moments où la nâfila est déconseillée.",
+      "page_ref_pdf": 7
+    }
+  ],
+
+  "design_notes_for_app": [
+    "Le moteur de décision NE DEMANDE PAS à l'utilisateur la catégorie de l'acte (rukn/sunna/fadila). C'est l'app qui classe à partir du catalogue, à partir d'événements en langage ordinaire.",
+    "Activer un mode 'mawsûs' réglable par l'utilisateur : il change la règle du doute.",
+    "Chaque verdict de l'app DOIT afficher la référence (page du sharh, hadith) — c'est ce qui crée la confiance.",
+    "Les divergences (mashhûr vs minoritaire) doivent rester consultables dans une couche 'pour aller plus loin', sans encombrer le verdict principal.",
+    "Le catalogue est versionné. Toute modification après validation d'un savant DOIT être tracée."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Sahw - La règle pour votre prière",
+  "short_name": "Sahw",
+  "description": "Trouvez la règle du sujūd as-sahw lorsqu'une erreur survient pendant la prière.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF8F5",
+  "theme_color": "#FAF8F5",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
