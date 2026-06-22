@@ -450,7 +450,7 @@ function AboutScreen() {
     ['Source', 'Mukhtasar al-Akhdari'],
     ['Commentaire', 'Al-Misk al-Adhfari'],
     ['Madhhab', 'Mâlikî'],
-    ['Relecture savante', "Sh. Mouhammad N'Diaye, Dakar, 12/2025"],
+    ['Relecture savante', "Un serviteur"],
     ['Version du contenu', 'v1.0.0, 28 mai 2026'],
     ['Langue', 'Français · arabe à venir'],
     ['Licence', 'CC BY-NC-SA 4.0'],
